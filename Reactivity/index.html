@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./vue.js"></script>
+</head>
+<body>
+    
+   <div >
+    <p>Produtos: <span class="pdt">0</span></p>
+    <button class="add">Adicionar</button>
+   </div>
+
+   <div id="app">
+    <p>Produtos com Vue: <span class="pdt">{{produto * qtd}}</span></p>
+    <button @click="qtd++">Adicionar</button>
+    <p>Quantidade: <span>{{qtd}}</span></p>
+   </div>
+
+   <script>
+     
+     /* Builded by Vue*/
+
+     
+     const vm = new Vue({
+        el:"#app",
+        data: {
+            produto:45,
+            qtd: 1
+        }
+     })
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     /* Builded by JS only*/
+     
+     const dados = {
+        pdt: 0
+     }
+      const pdt = document.querySelector(".pdt")
+      const add = document.querySelector(".add")
+
+      pdt.innerText = dados.pdt
+
+      function adicionar(){
+        dados.pdt++;
+        Upto()
+
+      }
+      function Upto(){
+        pdt.innerText = dados.pdt
+      }
+
+      add.addEventListener("click", adicionar)
+
+
+   </script>
+
+
+</body>
+</html>
