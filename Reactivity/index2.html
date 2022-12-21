@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dolar Converter</title>
+    <script src="./vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <p>Quantos dolares deseja comprar? <span>{{real}}</span></p>
+        <button @click="real++">Clique para Aumentar</button>
+        <p>Dolar <span>{{dolar * real}}</span></p>
+         <p>Does have money enough? <span>{{tem ? "Sim" : "Não"}}</span></p>
+
+    </div>
+
+<script>
+new Vue({
+    el:"#app",
+    data: {
+        titulo:'Template Vue',
+        dolar: 5.20,
+        real: 1,
+        tem: true
+        
+    }
+})
+
+
+</script>
+
+</body>
+</html>

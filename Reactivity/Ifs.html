@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React Basic V-IF</title>
+    <script src="vue.js"></script>
+</head>
+<body>
+   
+    <div id="app">
+
+       <input v-model="colors" type="color">
+       {{colors}}
+
+       <button   @click="change('false')">Desappear</button>
+ 
+
+
+        <div :style="{background:colors}"  v-if="desa === true" 
+        style="height: 150px; margin: 25px;"
+        >
+       <p style="text-align: center; line-height: 150px; font-size: 50px;">This div change colors and desappear</p>
+        </div>
+    </div>
+
+<script>
+   new Vue({
+    el:'#app',
+    data: {
+     colors:'#334',
+     desa: true
+    },
+    methods: {
+      change(type){
+        this.desa = type
+      }
+    }
+   })
+
+
+</script>
+
+
+</body>
+</html>
