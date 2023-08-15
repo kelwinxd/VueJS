@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>V-on</title>
+    <script src="./vue.js"></script>
+</head>
+<body>
+<div id="app">
+        <!-- Toggle -->
+
+    <button @click="ativo = !ativo" >Show</button>
+
+    <p v-if="ativo">Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum a quibusdam aut voluptates minima in repudiandae molestias iste exercitationem sed voluptate eaque autem, soluta, maiores laboriosam id assumenda doloremque quos?</p>
+
+    <!--   Keyup -->
+    <p>Write your name</p>
+    <label for="">Nome</label>
+    <input type="text" @keyup.enter="Write" v-model="name" >
+    <div style="background-color: green;">
+    <h2 v-if="native">nome: {{name}}</h2>
+    </div>
+
+
+</div>
+
+
+    <script>
+const vm = new Vue({
+
+    el:"#app",
+    data: {
+         ativo: true,
+         native: false
+    },
+    methods: {
+        Write(){
+        this.native = true
+        }
+    }
+}
+
+
+)
+    </script>
+</body>
+</html>

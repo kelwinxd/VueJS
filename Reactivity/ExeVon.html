@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./vue.js"></script>
+</head>
+<body>
+    
+
+
+ 
+    <div id="app">
+        <ul>
+            <li><a href="https://api.origamid.dev/stock/aapl/quote" @click.prevent="fetGo">Apple</a></li>
+            <li><a href="https://api.origamid.dev/stock/googl/quote" @click.prevent="fetGo">Google</a></li>
+            <li><a href="https://api.origamid.dev/stock/amzn/quote" @click.prevent="fetGo">Amazon</a></li>
+            <li><a href="https://api.origamid.dev/stock/ebay/quote" @click.prevent="fetGo">Ebay</a></li>
+            <li><a href="https://api.origamid.dev/stock/pypl/quote" @click.prevent="fetGo">Paypal</a></li>
+          </ul>
+
+          <h2>{{action.companyName}}</h2>
+          <h3>Market cap: {{action.marketCap}}</h3>
+    </div>
+<script>
+    const vm = new Vue({
+        el:"#app",
+        data:{
+action: {}
+        },
+        methods:{
+            fetGo(){
+                const url = event.currentTarget.href
+               fetch(url).then(r => r.json()).then(json => {this.action = json})
+            }
+        }
+    })
+</script>
+
+
+</body>
+</html>

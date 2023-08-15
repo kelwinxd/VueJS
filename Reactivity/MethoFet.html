@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch</title>
+    <script src="./vue.js"></script>
+</head>
+<body>
+    <div id="app">
+
+<p>{{nome}}</p>
+<button @click="Fet">Fetch</button>
+
+<p>LatestPrice: <span>{{actions.latestPrice}}</span></p>
+
+
+    </div>
+
+
+    <script>
+       const vm = new Vue({
+        el:'#app',
+        data: {
+            nome:'kelwin',
+            actions: {}
+        },
+        methods: {
+            Fet(){
+                fetch('https://api.origamid.dev/stock/aapl/quote')
+                .then(response => response.json())
+                .then(json => {
+                    this.actions = json
+                } )
+            }
+        }
+       })
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>V-bind</title>
+    <script src="vue.js"></script>
+</head>
+<body>
+    <div id="app">
+     
+      <button @click="push">Empresas</button>
+      <h2>{{google.companyName}}</h2>  
+      <p :class="google.marketCap > apple.marketCap ? 'green' : 'red' ">{{google.marketCap}}</p>
+
+      <h2>{{apple.companyName}}</h2>  
+      <p>{{apple.marketCap}}</p>
+ 
+    </div>
+
+<style>
+   .red {
+    color:red;
+   }
+
+   .green {
+    color: green;
+   }
+
+</style>
+
+    <script>
+const vm = new Vue({
+el:"#app",
+data: {
+    google:{},
+    apple: {}
+   
+},
+methods: {
+    fetg(){
+    fetch('https://api.origamid.dev/stock/googl/quote')
+    .then(response => response.json())
+    .then(json => {this.google = json})
+   },
+   feta(){
+    fetch('https://api.origamid.dev/stock/aapl/quote')
+    .then(response => response.json())
+    .then(json => {this.apple = json})
+   },
+   push(){
+    this.fetg()
+    this.feta()
+   }
+
+}
+})
+  
+
+
+
+
+    </script>
+</body>
+</html>

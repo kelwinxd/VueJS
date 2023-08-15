@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./vue.js"></script>
+</head>
+<body>
+    <div id="app2">
+    <p>{{Prodname}}</p>
+
+</div>
+
+
+    <script>
+ new Vue({
+    el:"#app2",
+    data: {
+        windinstrument:'Flute',
+        stringinstrument: 'Guitar'
+    },
+    //computed is used to functions that active quite times
+    computed: {
+    Prodname(){
+        //This refers to main Vue, use it just inside the Vue and with Arrow functions
+        return this.windinstrument
+    }
+    }
+})
+
+
+    </script>
+</body>
+</html>

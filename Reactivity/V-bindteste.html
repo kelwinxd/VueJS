@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>teste</title>
+    <script src="./vue.js"></script>
+</head>
+<body>
+    <style>
+        body {
+            max-width: 1000;
+        }
+       .div1 {
+           margin-top: 50px ;
+        text-align: center;
+        
+       }
+
+       button {
+        margin: 45px;
+        padding: 20px;
+
+        
+       }
+
+       .red {
+        background-color: red;
+       }
+
+    </style>
+<div class="div1" :style="{background:color}" id="app">
+   <div >
+    <p>Which of Country is wealther?</p>
+    <br><br><br><br><br>
+       <button @click="changecolor">EUA</button> 
+     
+         <button @click="changecolor2">Luxemburgo</button>
+
+         <h2>{{phrase}}</h2>
+    
+
+   </div>
+   
+
+ 
+</div>
+
+
+<script>
+ new Vue({
+    el:"#app",
+    data:{
+        color: "",
+        phrase: ""
+    },
+    methods:{
+        changecolor(){
+            this.color = "red"
+            this.phrase = "Você Errou!"
+        },
+        changecolor2(){
+            this.color = "green"
+            this.phrase = "Você Acertou!"
+        }
+    }
+ })
+
+</script>
+</body>
+</html>

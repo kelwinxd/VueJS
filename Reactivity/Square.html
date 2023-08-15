@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Square Exercice</title>
+    <script src="./vue.js"></script>
+</head>
+<body>
+    <div id="app" style="border: 2px solid gray; text-align: center;">
+     <p>Side of Square: <span>{{Square_side}}</span></p>
+     <p>Perimeter: <span>{{Square_side * 4}}</span></p>
+     <p>Area: <span>{{Square_side * Square_side}}</span></p>
+    </div>
+
+    <script>
+        const vm = new Vue({
+            el:"#app",
+            data:{
+                Square_side:5
+            }
+        })
+    </script>
+</body>
+</html>

@@ -8,14 +8,15 @@
     <script src="./vue.js"></script>
 </head>
 <body>
-    
+    <!--  Dev with JS  -->
    <div >
     <p>Produtos: <span class="pdt">0</span></p>
     <button class="add">Adicionar</button>
    </div>
 
+   <!--  Dev with Vue  -->
    <div id="app">
-    <p>Produtos com Vue: <span class="pdt">{{produto * qtd}}</span></p>
+    <p>Produtos com Vue: <span>{{produto * qtd}}</span></p>
     <button @click="qtd++">Adicionar</button>
     <p>Quantidade: <span>{{qtd}}</span></p>
    </div>
@@ -32,15 +33,6 @@
             qtd: 1
         }
      })
-     
-     
-     
-     
-     
-     
-     
-     
-     
      
      /* Builded by JS only*/
      
